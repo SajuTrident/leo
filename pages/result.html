@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Internet error start-->
+    <script type="text/javascript" charset="utf-8">
+      if (navigator.onLine) {
+         const onlIne = 200;
+      } else {
+         location.replace('./error/oops.html');
+      }
+    </script>
+    <!--Internet error end-->
+    <meta http-equiv="X-Frame-Options" content="allow">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Result</title>
+    <link rel="stylesheet" href="./style/result.css" type="text/css" media="all" />
+  </head>
+  <body>
+  <!--<iframe id="Result" class="container" src="./error/not-found.html" frameborder="0"></iframe>-->
+  <embed id="Result" src="./error/not-found.html" class="container result" />
+  <script type="text/javascript" charset="utf-8">
+  var result = document.querySelector('.result');
+    const setStorage = localStorage.getItem('Url');
+  /*if(result.value){
+    result.src = `iframe.php?url${setStorage}`
+    localStorage.clear()
+      } else{
+        result.src = `./error/not-found.html`
+      }*/
+      result.src = `${setStorage}`
+      localStorage.clear();
+    </script>
+  <script src="./javascript/script.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>
